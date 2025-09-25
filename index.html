@@ -4,146 +4,269 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bootstrap Components</title>
+  <title>Move It - Professional Moving Services</title>
+  <meta name="description" content="Exceptional moving services across the US. Professional, countrywide, with a personal touch.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
 
-    #check_button{
+    .navbar {
+      background: rgba(255, 255, 255, 0.1) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-section {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 4rem 2rem;
+      margin: 2rem 0;
+      backdrop-filter: blur(10px);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .feature-icon {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .feature-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-outline-secondary {
+      border-color: rgba(255, 255, 255, 0.5);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: white;
+      transform: translateY(-2px);
+    }
+
+    #check_button {
       border-color: rgb(121, 121, 171);
       color: rgb(91, 91, 134);
-    }
-    #check_button:hover{
-      background-color: rgba(166, 166, 244, 0.674);
-      border: none;
+      transition: all 0.3s ease;
     }
 
-    .images{
+    #check_button:hover {
+      background-color: rgba(166, 166, 244, 0.674);
+      border: none;
+      transform: scale(1.05);
+    }
+
+    .images {
       width: 35px;
       height: 35px;
       display: grid;
       align-items: center;
       justify-content: center;
-      
-     
     }
 
-    .kk{
-      border-radius: 10px;
+    .kk {
+      border-radius: 15px;
     }
 
-    
+    .carousel {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
 
+    .carousel-item img {
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 2rem 0;
+      margin-top: 3rem;
+    }
+
+    .icon-link {
+      text-decoration: none;
+      color: #667eea;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .icon-link:hover {
+      color: #764ba2;
+    }
+
+    .modal-content {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: none;
+    }
+
+    .form-control:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="box-seam.svg" alt="box-seam" height="30px"> Move It</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Services
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="PostCode" aria-label="Search"/>
-        <button id="check_button" class="btn btn-outline-success" type="submit">Check</button>
-      </form>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="Pic/box-seam.svg" alt="box-seam" height="30px"> Move It</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#services">Residential Moving</a></li>
+              <li><a class="dropdown-item" href="#services">Commercial Moving</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#services">Packing Services</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search" id="postcodeForm">
+          <input class="form-control me-2" type="search" placeholder="Enter Postcode" aria-label="Search" id="postcodeInput"/>
+          <button id="check_button" class="btn btn-outline-success" type="submit">Check Availability</button>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 
-<div class="px-4 pt-5 my-5 text-center border-bottom">
+<div id="home" class="px-4 pt-5 my-5 text-center border-bottom hero-section">
   <div class="col-lg-6 mx-auto"> 
     <h1 class="display-4 fw-bold text-body-emphasis">Move With Joy</h1>
     <p class="lead mb-4">Welcome to our website, where we are on a mission to provide exceptional moving services to customers in the US. As a startup, we believe that moving doesn't have to be stressful or complicated, and we are passionate about making the process as seamless and enjoyable as possible.</p> 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-       <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Get a Quote</button>
-        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Contact US</button> 
+       <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" data-bs-toggle="modal" data-bs-target="#quoteModal">Get a Quote</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button> 
       </div>
      </div> 
-     <div class="overflow-hidden" style="max-height: 30vh;"> <div class="container px-5"> <img src="moving-van.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy"> </div> 
+     <div class="overflow-hidden" style="max-height: 30vh;"> <div class="container px-5"> <img src="Pic/couple.jpg" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Moving team" width="700" height="500" loading="lazy"> </div> 
     </div> 
 </div>
 
 
 
 
-<div id="featured-3" class="container px-4 py-5">
- <h2 class="pb-2 border-bottom">Why Move With Us?</h2> 
- <div class="row g-4 py-5 row-cols-1 row-cols-lg-3"> 
-  <div class="feature col"> 
-    <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 kk"><div class="images"> <img src="briefcase.svg" alt="briefcase_svg" ></div>
-  </div> 
-  <h3 class="fs-2 text-body-emphasis">Professional</h3> 
+<div id="about" class="container px-4 py-5 fade-in">
+ <h2 class="pb-2 border-bottom">Why Move With Us?</h2>
+ <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+  <div class="feature col">
+    <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 kk"><div class="images"> <img src="Pic/briefcase.svg" alt="briefcase" ></div>
+  </div>
+  <h3 class="fs-2 text-body-emphasis">Professional</h3>
   <p>Our team of professional movers are trained to prioritize efficiency, organization, and attention to detail. We understand that your possessions are more than just objects - they are a reflection of your life, memories, and experiences. That's why we take extra care to ensure that everything is packed and transported with the utmost care and attention.</p>
-   <a href="#" class="icon-link">
-Get a quote
-<svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a> 
-</div> 
-<div class="feature col"> 
-  <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 kk"><div class="images"> <img src="bus-front.svg" alt="bus_svg" ></div>
-  </div> 
+   <a href="#" class="icon-link" data-bs-toggle="modal" data-bs-target="#quoteModal">
+Get a quote <i class="fas fa-arrow-right ms-1"></i>
+</a>
+</div>
+<div class="feature col">
+  <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 kk"><div class="images"> <img src="Pic/bus-front.svg" alt="bus" ></div>
+  </div>
   <h3 class="fs-2 text-body-emphasis">Countrywide</h3>
-   <p>We offer a range of services to suit your individual needs, whether you're moving locally or across the country. Our team can handle everything from packing and loading to unloading and unpacking, so you can focus on settling into your new home. And with our transparent pricing and no hidden fees, you can trust that you're getting a fair and competitive rate for our services.</p> 
-   <a href="#" class="icon-link">
-Get a quote
-<svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a>
- </div> 
- <div class="feature col"> 
-  <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 kk"> <div class="images"><img src="chat-square-heart.svg" alt="chat_square" ></div>
+   <p>We offer a range of services to suit your individual needs, whether you're moving locally or across the country. Our team can handle everything from packing and loading to unloading and unpacking, so you can focus on settling into your new home. And with our transparent pricing and no hidden fees, you can trust that you're getting a fair and competitive rate for our services.</p>
+   <a href="#" class="icon-link" data-bs-toggle="modal" data-bs-target="#quoteModal">
+Get a quote <i class="fas fa-arrow-right ms-1"></i>
+</a>
+ </div>
+ <div class="feature col">
+  <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3 kk"> <div class="images"><img src="Pic/chat-square-heart.svg" alt="chat" ></div>
   </div>
    <h3 class="fs-2 text-body-emphasis">Personal Touch</h3>
     <p>At our core, we believe that moving should be an exciting and positive experience, not a stressful one. By providing exceptional moving services in the US, we hope to revolutionize the way people think about moving and provide a better, more personalized experience for our customers. Contact us today to learn more about how we can help you with your next move.</p>
-     <a href="#" class="icon-link">
-Get a quote
-<svg class="bi" aria-hidden="true"><use xlink:href="#chevron-right"></use></svg> </a> 
-</div> 
-</div> 
+     <a href="#" class="icon-link" data-bs-toggle="modal" data-bs-target="#contactModal">
+Contact us <i class="fas fa-arrow-right ms-1"></i>
+</a>
+</div>
+</div>
 </div>
 
 
-<div class="container">
-<div id="carouselExampleIndicators" class="carousel slide pics">
+<div id="services" class="container fade-in">
+<div id="carouselExampleIndicators" class="carousel slide pics" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-  <div class="carousel-inner ">
+  <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="couple.jpg" class="d-block w-100" alt="couple">
+      <img src="Pic/couple.jpg" class="d-block w-100" alt="Happy couple moving">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Residential Moving</h5>
+        <p>Stress-free home relocations with care and precision.</p>
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="dog.jpg" class="d-block w-100" alt="dog">
+      <img src="Pic/dog.jpg" class="d-block w-100" alt="Pet-friendly moving">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Pet-Friendly Services</h5>
+        <p>We ensure your furry friends travel safely too.</p>
+      </div>
     </div>
     <div class="carousel-item">
-      <img src="family.jpg" class="d-block w-100" alt="family">
+      <img src="Pic/family.jpg" class="d-block w-100" alt="Family moving">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Family Moves</h5>
+        <p>Making family transitions smooth and memorable.</p>
+      </div>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -156,6 +279,162 @@ Get a quote
   </button>
 </div>
 </div>
+
+<!-- Quote Modal -->
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="quoteModalLabel">Get a Free Quote</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="quoteForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" class="form-control" id="phone" required>
+          </div>
+          <div class="mb-3">
+            <label for="fromAddress" class="form-label">From Address</label>
+            <input type="text" class="form-control" id="fromAddress" required>
+          </div>
+          <div class="mb-3">
+            <label for="toAddress" class="form-label">To Address</label>
+            <input type="text" class="form-control" id="toAddress" required>
+          </div>
+          <div class="mb-3">
+            <label for="moveDate" class="form-label">Preferred Move Date</label>
+            <input type="date" class="form-control" id="moveDate" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="contactForm">
+          <div class="mb-3">
+            <label for="contactName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="contactName" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="contactEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="contactMessage" class="form-label">Message</label>
+            <textarea class="form-control" id="contactMessage" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>Move It</h5>
+        <p>Making moving joyful across the US.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#home" class="text-white">Home</a></li>
+          <li><a href="#about" class="text-white">About</a></li>
+          <li><a href="#services" class="text-white">Services</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact Info</h5>
+        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+        <p><i class="fas fa-envelope"></i> info@moveit.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Nationwide, USA</p>
+      </div>
+    </div>
+    <hr>
+    <div class="text-center">
+      <p>&copy; 2023 Move It. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Form handling
+document.getElementById('quoteForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Thank you! Your quote request has been submitted. We will contact you soon.');
+  this.reset();
+  bootstrap.Modal.getInstance(document.getElementById('quoteModal')).hide();
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Thank you! Your message has been sent. We will get back to you shortly.');
+  this.reset();
+  bootstrap.Modal.getInstance(document.getElementById('contactModal')).hide();
+});
+
+// Postcode check
+document.getElementById('postcodeForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const postcode = document.getElementById('postcodeInput').value;
+  if (postcode) {
+    alert(`Great! We service the area with postcode ${postcode}. We'll contact you with availability details.`);
+  } else {
+    alert('Please enter a valid postcode.');
+  }
+});
+
+// Fade in animation on scroll
+const observerOptions = {
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('fade-in');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 
 </body>
 
